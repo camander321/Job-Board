@@ -12,6 +12,7 @@ namespace JobBoard.Models
     private string _company;
     private string _startDate;
     private string _salary;
+    private Contact _contact;
     private bool _posted = true;
 
     public JobOpening(string title, string desc, string company, string startDate, string salary)
@@ -37,9 +38,6 @@ namespace JobBoard.Models
           return;
         }
       }
-
-
-
 
       _instances.Add(this);
     }
@@ -118,6 +116,15 @@ namespace JobBoard.Models
       return _instances;
     }
 
+    public Contact GetContact()
+    {
+      return _contact;
+    }
+
+    public void SetContact(Contact contact)
+    {
+      _contact = contact;
+    }
 
   }
 }

@@ -13,6 +13,11 @@
       <p>Start Date: @Model.GetStartDate()</p>
       <h4>Salary: @Model.GetSalary()</h4>
 
+      <h2>Contact Info</h2>
+      <p>Name: @Model.GetContact().GetName()</p>
+      <p>Email: @Model.GetContact().GetEmail()<p>
+      <p>Phone: @Model.GetContact().GetPhone()</p>
+
       <a href="/">Return</a>
     </div>
   </body>

@@ -23,7 +23,6 @@ namespace JobBoard.Controllers
     [HttpPost("/confirm")]
     public ActionResult AddJob()
     {
-      //int numJobs = JobOpening.GetAll().Count;
       JobOpening newJob = new JobOpening(
         Request.Form["title"],
         Request.Form["description"],
@@ -32,10 +31,14 @@ namespace JobBoard.Controllers
         Request.Form["salary"]
       );
 
-      // if (numJobs == JobOpening.GetAll().Count)
-      //   return View("TryAgain");
-      // else
-        return View("Confirmation", newJob);
+      Contact newContact = new Contact(
+        Request.Form["name"],
+        Request.Form["email"],
+        Request.Form["phone"]
+      );
+      newJob.SetContact(newContact);
+      
+      return View("Confirmation", newJob);
     }
 
     [HttpGet("/jobs/{id}")]
