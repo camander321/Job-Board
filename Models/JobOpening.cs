@@ -68,6 +68,7 @@ namespace JobBoard.Models
     }
 
 
+
     public void SetSalary(string salary)
     {
       _salary = salary;
@@ -76,6 +77,16 @@ namespace JobBoard.Models
     public string GetSalary()
     {
       return _salary;
+    }
+
+    public int GetId()
+    {
+      return _id;
+    }
+
+    public static JobOpening Find(int id)
+    {
+      return _instances[id];
     }
 
     public static List<JobOpening> GetAll()

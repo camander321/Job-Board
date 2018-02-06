@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
     <title>Job Board</title>
   </head>
   <body>
@@ -9,7 +10,8 @@
     <ul>
       @foreach (var job in Model)
       {
-        <li>@job.GetTitle()</li>
+
+        <li><a href="/jobs/@job.GetId()">@job.GetTitle()</a></li>
       }
     </ul>
 

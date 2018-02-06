@@ -2,27 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
     <title>New Job</title>
   </head>
   <body>
-    <h1>Add Your Job Stuff</h1>
-    <form action="/confirm" method="post">
-      <label for="title"></label>
-      <input type="text" name="title">
+    <div class="container">
+      <h1>Add Your Job Stuff</h1>
+      <form action="/confirm" method="post">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" name="title">
 
-      <label for="description"></label>
-      <input type="text" name="description">
+        <label for="description">Job Description</label>
+        <input class="form-control" type="text" name="description">
 
-      <label for="company"></label>
-      <input type="text" name="company">
+        <label for="company">Company</label>
+        <input class="form-control" type="text" name="company">
 
-      <label for="startDate"></label>
-      <input type="cal" name="startDate">
+        <label for="startDate">Start Date</label>
+        <input class="form-control" type="date" name="startDate">
 
-      <label for="salary"></label>
-      <input type="number" name="salary">
+        <label for="salary">Salary</label>
+        <input class="form-control" type="number" name="salary">
 
-      <button type="submit" class="btn btn-info">Add Job</button>
-    </form>
+        <button type="submit" class="btn btn-info form-control">Add Job</button>
+      </form>
+    </div>
+
   </body>
 </html>

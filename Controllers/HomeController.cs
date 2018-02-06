@@ -31,8 +31,14 @@ namespace JobBoard.Controllers
         Request.Form["salary"]
       );
 
-
       return View("Confirmation");
+    }
+
+    [HttpGet("/jobs/{id}")]
+    public ActionResult Detail(int id)
+    {
+      JobOpening job = JobOpening.Find(id);
+      return View(job);
     }
 
   }
