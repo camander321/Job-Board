@@ -3,9 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Thanks!</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
   </head>
   <body>
-    <h1>Your Job Has Been Posted</h1>
-    <a href="/">See All Jobs</a>
+    <div class="container">
+      @if (Model.GetIsPosted())
+      {
+        <h1>Your Job Has Been Posted. You deserve praise.</h1>
+      }
+      else
+      {
+        <h1>Your Job Has NOT Been Posted. You suck</h1>
+      }
+      <a href="/">See All Jobs</a>
+    </div>
   </body>
 </html>

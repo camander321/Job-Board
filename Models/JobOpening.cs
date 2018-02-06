@@ -12,6 +12,7 @@ namespace JobBoard.Models
     private string _company;
     private string _startDate;
     private string _salary;
+    private bool _posted = true;
 
     public JobOpening(string title, string desc, string company, string startDate, string salary)
     {
@@ -20,8 +21,26 @@ namespace JobBoard.Models
       _company = company;
       _startDate = startDate;
       _salary = salary;
-
       _id = _instances.Count;
+
+      if (_title.Length == 0 || _description.Length == 0 || _company.Length == 0 || _startDate.Length == 0 || _salary.Length == 0)
+      {
+        _posted = false;
+        return;
+      }
+
+      foreach (JobOpening job in _instances)
+      {
+        if (_title == job._title && _description == job._description && _company == job._company && _startDate == job._startDate && _salary == job._salary)
+        {
+          _posted = false;
+          return;
+        }
+      }
+
+
+
+
       _instances.Add(this);
     }
 
@@ -84,6 +103,11 @@ namespace JobBoard.Models
       return _id;
     }
 
+    public bool GetIsPosted()
+    {
+      return _posted;
+    }
+
     public static JobOpening Find(int id)
     {
       return _instances[id];
@@ -93,5 +117,7 @@ namespace JobBoard.Models
     {
       return _instances;
     }
+
+
   }
 }

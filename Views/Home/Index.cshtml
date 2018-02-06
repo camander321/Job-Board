@@ -6,16 +6,18 @@
     <title>Job Board</title>
   </head>
   <body>
-    <h1>Here Are Some Job Openings You Probably Don't Qualify For</h1>
-    <ul>
-      @foreach (var job in Model)
-      {
+    <div class="container">
+      <h1>Here Are Some Job Openings You Probably Don't Qualify For</h1>
+      <ul>
+        @foreach (var job in Model)
+        {
 
-        <li><a href="/jobs/@job.GetId()">@job.GetTitle()</a></li>
-      }
-    </ul>
+          <li><a href="/jobs/@job.GetId()">@job.GetTitle()</a></li>
+        }
+      </ul>
 
 
-    <a href="/new-Job">Add A New Job</a>
+      <a href="/new-Job">Add A New Job</a>
+    </div>
   </body>
 </html>
