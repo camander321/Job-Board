@@ -42,6 +42,15 @@ namespace JobBoard.Models
       _instances.Add(this);
     }
 
+    public static void Remove(int id)
+    {
+      _instances.RemoveAt(id);
+      for (int i = 0; i < _instances.Count; i++) {
+        _instances[i]._id = i;
+      }
+
+    }
+
     public void SetTitle(string title)
     {
       _title = title;

@@ -17,7 +17,9 @@
       <p>Name: @Model.GetContact().GetName()</p>
       <p>Email: @Model.GetContact().GetEmail()<p>
       <p>Phone: @Model.GetContact().GetPhone()</p>
-
+      <form action="/removed/@Model.GetId()" method="post">
+        <button type="submit" class="btn btn-danger">Remove Job?</button>
+      </form>
       <a href="/">Return</a>
     </div>
   </body>

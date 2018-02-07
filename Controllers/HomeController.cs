@@ -37,7 +37,7 @@ namespace JobBoard.Controllers
         Request.Form["phone"]
       );
       newJob.SetContact(newContact);
-      
+
       return View("Confirmation", newJob);
     }
 
@@ -46,6 +46,13 @@ namespace JobBoard.Controllers
     {
       JobOpening job = JobOpening.Find(id);
       return View(job);
+    }
+
+    [HttpPost("/removed/{id}")]
+    public ActionResult RemoveJob(int id)
+    {
+      JobOpening.Remove(id);
+      return View("Index", JobOpening.GetAll());
     }
 
   }
